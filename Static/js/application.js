@@ -1,17 +1,11 @@
 var LOGIN_STATE = 0;
 $(document).ready(function() {
-    var need_version = 9;
-    var m = "<h3>Mozilla Firefox (version >= " + need_version + ") is required.</h3>";
-    m += "<p><a href='http://www.mozilla.org/en-US/firefox/new/' target='_blank'>Download</a></p>";
+    var m = "<h3>Does Not support legacy IE. Please Using Modern Browser </h3>";
+        m += "<p><a href='http://www.mozilla.org/en-US/firefox/new/' target='_blank'>Firefox</a>  <a href='http://www.google.com/chrome/eula.html?hl=zh-CN&standalone=1' target='_blank'>chrome</a></p>";
 
-    if (!$.browser.mozilla) {
+    if ($.browser.msie) {
         msg(m);
-        return ;
-    }
-
-    if (parseInt($.browser.version, 10) < need_version) {
-        msg(m);
-        return ;
+        return;
     }
 
     ajax();
